@@ -22,3 +22,46 @@ n	lost	reserve	return
 예제 #2
 3번 학생이 2번 학생이나 4번 학생에게 체육복을 빌려주면 학생 4명이 체육수업을 들을 수 있습니다.
 */
+
+function solution(n, lost, reserve) {
+    const newLost=[]                        //새로운 배열에 push 가아닌 splice를 사용시
+    const newReserve=[]                     //중간 중간 생략되어버리는 숫자가 생겨서 테스트케이스 통과 x
+    for(const c of lost){          
+        if(!reserve.includes(c)){           //먼저 여벌 체육복이 있는 학생이 도난당했을 경우를 생각해서 배열을 정리해준다.
+            newLost.push(c)
+        }
+    }
+     for(const c of reserve){
+        if(!lost.includes(c)){
+            newReserve.push(c)
+        }
+    }
+    newLost.sort()                
+    newReserve.sort()
+/* 정렬을 안할시 오류발생
+ex) n = 10
+lost= [3, 5, 7]
+
+reserve = [4, 6, 8]
+이 때 작은 숫자부터 시작해서 큰 것 부터 지운다면
+reserve = 4 --> 5 지움
+           6 --> 7 지움
+∴ lost에 3이 남아 9가 출력된다. 답은 10이므로 실패
+*/
+    for(const b of newReserve){ 
+        if(newLost.includes(b-1)){
+            console.log(b-1)
+            let clearlost = newLost.indexOf(b-1)    //중복되는 b값의 인덱스를 찾아서 splice로 b값 만 지워준다.
+            newLost.splice(clearlost,1)
+        }else if(newLost.includes(b+1)){
+            console.log(b+1)
+            let clearlost = newLost.indexOf(b+1)
+            newLost.splice(clearlost,1)   
+
+        }
+    }
+    
+    console.log(n - newLost.length)
+    return n - newLost.length
+    
+}
