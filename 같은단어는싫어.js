@@ -31,4 +31,4 @@ var arr =["coke", "water", "glass", "dog", "dog", "yogurt", "vitamin"]
 
 console.log(arr.sort(function(a,b) {
     return -1
-}))
+}))}
