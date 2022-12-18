@@ -31,33 +31,33 @@ number	limit	power	result
 //풀이
 function solution(number, limit, power) {
     var answer = 0
-    for (i = 1 ; i<=number; i++){
+    for (i = 1; i <= number; i++) {
         divisor = 0
-        for ( j = 1 ; j*j<= i; j++){
-            if(j*j == i){  //9에서 약수 3일 경우 약수가 하나만 추가되기에 +1을 해준다.
-                divisor +=1
-            }else if (i % j === 0){ 
-                divisor +=2
+        for (j = 1; j * j <= i; j++) {
+            if (j * j == i) {  //9에서 약수 3일 경우 약수가 하나만 추가되기에 +1을 해준다.
+                divisor += 1
+            } else if (i % j === 0) {
+                divisor += 2
             }
         }
-        if (divisor > limit){
+        if (divisor > limit) {
             answer += power
-        }else{
+        } else {
             answer += divisor
         }
-        
+
     }
-    return answer; 
+    return answer;
 }
 
 // 처음 아래와 같은 일반적으로 약수를 구하는 공식을 활용하여서 풀었을 경우 시간초과로 통과하지 못하였다.
 // 약수는 하나만 구하면 뒤에 약수를 구할 필요가 없기에 반복문 돌리는 횟수를 쉽게 줄일수 있다.
 
-for (i = 1 ; i<=number; i++){
+for (i = 1; i <= number; i++) {
     divisor = 0
-    for ( j = 1 ; j<= i; j++){
-        if (i % j === 0){
-            divisor ++
+    for (j = 1; j <= i; j++) {
+        if (i % j === 0) {
+            divisor++
         }
     }
 }
