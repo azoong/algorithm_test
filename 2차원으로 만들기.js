@@ -22,3 +22,19 @@ num_list	n	result
 
 */
 
+//문제풀이
+
+function solution(num_list, n) {
+    var answer = []
+    while(num_list.length > 0){  
+        answer.push(num_list.splice(0,n))                         
+    }
+    return answer;
+}
+
+/*
+slice를 쓰면 원본배열은 그대로 이지만
+splice를 쓰면 num_list 원본도 변한다.
+앞에서 n개씩 짤라 answer 푸쉬해주는것을 반복해준다.  
+
+*/
