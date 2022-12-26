@@ -19,42 +19,42 @@ n	    result
 420	    [2, 3, 5, 7]
 
 */
-function isPrime(num) {
-    if (num <= 1) {
-        return false;
-    } else if (num === 2) {
-        return true;
-    } else {
-        for (let i = 2; i < num; i++) {
-            if (!(num % i)) {
-                return true;
-            }
-        }
-        return false;
-    }
-}
+
+//풀이 
+/* 상당히 오래 걸린 문제 였다. 
+소인수분해를 어떻게 로직을 짜야될지 어려움이 많았다.
+
+소인수분해 방법을 검색해서 하나씩 계속 나누기를 하는것에 힌트를 얻어서 작성하였다.
+for 반복문을 돌려서 소인수 구하고 그것으로 숫자를 나누어주고 
+break문을 통하여 나누어진 값으로 다시 반복문을 반복한다.
 
 
+
+
+*/
 function solution(n) {
     var result = []
     var a = n
-    while(isPrime(a)){
-       
-        for (i=2; i<a; a++){
-            console.log(a)
-            console.log(i)
-            if (a % i === 0) {
-                result.push(i)
-                a = a / i
-                break
+    while(a>1){  //1이상일경우 반복문 실행
+        for (i=2; i<=a; i++){
+            if (a % i === 0) {  //나누어 떨어질경우 
+                result.push(i)  //그 나누어 떨어지는 수를 배열에 추가
+                a = a / i       //나누어 떨어지는 수와 나눈 수의 값을 새로운 값으로 업데이트
+                break           //반복문을 초기화 업데이트된 수로 다시 처음부터 반복!
             }
         }
        
     }
-    return result
+    const answer  = new Set (result)  //Set을 사용하여 배열에서 중복된 값 제거
+    return [...answer]
 }
 
-console.log(solution(100))
+
+
+console.log(solution(420))
+
+
+
 
 
 
