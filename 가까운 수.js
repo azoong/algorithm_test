@@ -24,7 +24,7 @@ array	         n	    result
 function solution(array, n) {
     array.push(n) //배열에 n을 넣어준다
     array.sort((a,b)=>a-b)  //정렬을 하면 가까운수 2개가 n이 위치한 인덱스 앞과 뒤에 위치할것임
-    var index = array.findIndex(a=> a===n)  //그 수2개 중 n가 차가 더 적은 것을 찾아서 리턴하면됨.
+    var index = array.findIndex(a=> a===n)  //그 수2개 중 n과 차가 더 적은 것을 찾아서 리턴. 같을 경우 더작은수를 리턴
     if (array[index]-array[index-1] > array[index+1]-array[index]){
         return array[index+1]
     }else{
