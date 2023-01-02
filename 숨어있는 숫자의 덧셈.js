@@ -18,3 +18,28 @@ my_string	        result
 "1a2b3c4d123Z"	    133
 
 */
+
+// 풀이
+
+function solution(my_string) {
+    var answer = 0
+    var arr = my_string.replace(/[^0-9]/g, ' ').split(' ').filter(a => a)
+    for (let i of arr){
+        answer += Number(i)
+    }
+    return answer;
+}
+
+/*
+숫자를 빼는데 그냥 정규표현식을 쓸경우 
+
+숫자를 한자리씩 빼기에 뭉쳐있는 숫자를 어떻게 뺄지가 중점
+
+++
+정규표현식으로 숫자를 찾지말고 숫자 외에 나머지를 찾아 공백으로 두면 
+
+연속된 숫자를 배열로 분리 할수 있다!
+
+
+
+*/
