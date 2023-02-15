@@ -1,4 +1,4 @@
-//문제 출처 https://school.programmers.co.kr/learn/courses/30/lessons/120890
+//문제 출처 https://school.programmers.co.kr/learn/courses/30/lessons/12924
 
 /*문제 설명
 
