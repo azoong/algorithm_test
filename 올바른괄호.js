@@ -64,6 +64,25 @@ function solution(s){
     return answer;
 }
 
+//마지막 풀이. 좀더 깔끔히 정리.
+function solution(s){
+    let stack = []
+    for (el of s){
+        if(el == "(") stack.push("(")
+        else{
+            if(stack.length) stack.pop()
+            else return false
+        }
+    }
+    if (stack.length) return false
+    else return true
+    
+
+    // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+    console.log('Hello Javascript')
+
+}
+
 // 다른 풀이를 참고하니 괄호가 () 뿐이니 stack말고 count 를 사용하여 숫자를 더하고 빼주었다.
 // 이경우 배열을 쓴것보다 훨씬 빠른 속도가 나온다.
 
