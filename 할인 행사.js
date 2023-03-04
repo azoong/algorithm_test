@@ -11,7 +11,7 @@ const number = [3, 2, 2, 2, 1]
 const discount = ["chicken", "apple", "apple", "banana", "rice", "apple", "pork", "banana", "pork", "rice", "pot", "banana", "apple", "banana"]
 
 
-
+//풀이
 
 function solution(want, number, discount) {
   let answer = 0
