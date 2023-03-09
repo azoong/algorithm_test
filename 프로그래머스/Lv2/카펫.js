@@ -26,7 +26,8 @@ function solution(brown, yellow) {
     let sum = brown + yellow
 
     for (let i = 1; i<= yellow; i++){
-        if(yellow % i ==0) {
+        if(yellow % i ==0) { 
+            //약수를 구한후 2씩더한값을 곱해서 합이 나올경우(전체칸의 약수) 정답을 리턴.
             if((i+2) * (yellow/i +2) == sum) {
                 answer.push(yellow/i +2, i+2)
                 break
@@ -37,3 +38,18 @@ function solution(brown, yellow) {
     return answer;
 }
 
+//수정
+
+//굳이 answer에 할당해서 리턴할 필요 없이 바로 리턴을 해주자;
+ 
+
+function solution(brown, yellow) {
+    let sum = brown + yellow
+    for (let i = 1; i<= yellow; i++){
+        if(yellow % i ==0) {
+            if((i+2) * (yellow/i +2) == sum) {
+                return [yellow/i +2, i+2]
+            }
+        } 
+    }
+}
