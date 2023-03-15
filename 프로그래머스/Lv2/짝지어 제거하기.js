@@ -28,6 +28,7 @@ cdcd	0
 
 //스택을 사용하면 쉽게 풀 수 있을것이라고 생각하였다.
 
+
 function solution(s){
     let temp = [] //스택배열
     for (let i of s){
